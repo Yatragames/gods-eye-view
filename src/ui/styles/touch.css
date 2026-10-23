@@ -11,8 +11,8 @@
   }
 
   :is(button, select, [role='button'], input[type='range']) {
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 44px !important;
+    min-height: 44px !important;
   }
 
   :is(button, [role='button']) {
@@ -20,7 +20,7 @@
   }
 
   :is(input:not([type='checkbox']):not([type='radio']), select, textarea) {
-    font-size: 16px;
+    font-size: 16px !important;
   }
 
   .panel-drag-handle {

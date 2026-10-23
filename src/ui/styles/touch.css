@@ -1,0 +1,46 @@
+/* Let Cesium own map gestures; leave panel scrolling and browser zoom intact. */
+#cesiumContainer canvas,
+.panel-drag-handle {
+  touch-action: none;
+}
+
+@media (pointer: coarse) {
+  html,
+  body {
+    height: 100dvh;
+  }
+
+  :is(button, select, [role='button'], input[type='range']) {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  :is(button, [role='button']) {
+    touch-action: manipulation;
+  }
+
+  :is(input:not([type='checkbox']):not([type='radio']), select, textarea) {
+    font-size: 16px;
+  }
+
+  .panel-drag-handle {
+    min-height: 44px;
+  }
+
+  [data-panel-body] {
+    overscroll-behavior: contain;
+  }
+
+  #title-bar {
+    top: max(12px, env(safe-area-inset-top));
+    left: max(16px, env(safe-area-inset-left));
+  }
+
+  #command-dock {
+    bottom: max(8px, env(safe-area-inset-bottom));
+    max-width: calc(
+      100% - max(16px, env(safe-area-inset-left)) -
+        max(16px, env(safe-area-inset-right))
+    );
+  }
+}

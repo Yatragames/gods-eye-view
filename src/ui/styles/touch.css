@@ -35,9 +35,11 @@
     top: max(12px, env(safe-area-inset-top));
     left: max(16px, env(safe-area-inset-left));
   }
+}
 
+@media (max-width: 720px) {
   #command-dock {
-    bottom: max(8px, env(safe-area-inset-bottom));
+    padding-bottom: max(6px, env(safe-area-inset-bottom));
     max-width: calc(
       100% - max(16px, env(safe-area-inset-left)) -
         max(16px, env(safe-area-inset-right))
